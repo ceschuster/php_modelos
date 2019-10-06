@@ -16,4 +16,6 @@ while($rows = mysqli_fetch_assoc($result))
 {
 	print_r($rows);
 }
+
+mysqli_close($conexao1);
 ?>

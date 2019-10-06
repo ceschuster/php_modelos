@@ -1,3 +1,6 @@
+<?php
+include_once "conexao1.php";
+
 $nome = $_POST["nome"];
 $tipo = $_POST["tipo"];
 $ref = $_POST["ref"];
@@ -13,3 +16,5 @@ mysqli_stmt_execute($stmt);
 $last_id = mysqli_insert_id($link);
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
+
+?>

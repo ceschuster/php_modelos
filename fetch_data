@@ -1,3 +1,6 @@
+<?php
+include_once "conexao1.php";
+
 $firstName = 'Ana';
 $lastName = "Krajcik";
  
@@ -13,3 +16,4 @@ while($rows = mysqli_fetch_assoc($result))
 {
 	print_r($rows);
 }
+?>

@@ -1,0 +1,15 @@
+$firstName = 'Ana';
+$lastName = "Krajcik";
+ 
+$qry = "select * from customers where first_name = ? and last_name = ?";
+ 
+$userStatement = mysqli_prepare($conn,$qry);
+mysqli_stmt_bind_param($userStatement,'ss',$firstName,$lastName);
+ 
+mysqli_stmt_execute($userStatement);
+$result = mysqli_stmt_get_result($userStatement);
+ 
+while($rows = mysqli_fetch_assoc($result))
+{
+	print_r($rows);
+}

@@ -13,8 +13,8 @@ mysqli_stmt_bind_param($stmt, "ssi",
 );
 mysqli_stmt_execute($stmt);
 
-$last_id = mysqli_insert_id($link);
+$last_id = mysqli_insert_id($conexao1);
 mysqli_stmt_close($stmt);
-mysqli_close($conn);
+mysqli_close($conexao1);
 
 ?>

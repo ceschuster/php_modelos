@@ -12,3 +12,4 @@ mysqli_stmt_execute($stmt);
 
 $last_id = mysqli_insert_id($link);
 mysqli_stmt_close($stmt);
+mysqli_close($conn);

@@ -6,7 +6,7 @@ $lastName = "Krajcik";
  
 $qry = "select * from customers where first_name = ? and last_name = ?";
  
-$userStatement = mysqli_prepare($conn,$qry);
+$userStatement = mysqli_prepare($conexao1,$qry);
 mysqli_stmt_bind_param($userStatement,'ss',$firstName,$lastName);
  
 mysqli_stmt_execute($userStatement);

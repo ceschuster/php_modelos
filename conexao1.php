@@ -1,13 +1,4 @@
 <?php
-// Try and connect to the database
-$connection = mysqli_connect('localhost',$username,$password,$dbname);
- 
-// If connection was not successful, handle the error
-if($connection === false) {
-    // Handle error - notify administrator, log to a file, show an error screen, etc.
-}
-
-
 header('Content-Type: text/html; charset=utf-8');
 //mysql_set_charset('utf8');
 //ini_set('default_charset','UTF-8');

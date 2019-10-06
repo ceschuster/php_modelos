@@ -1,8 +1,8 @@
 <?php
 include_once "conexao1.php";
 
-$firstName = 'Ana';
-$lastName = "Krajcik";
+$firstName = 'Ana'; // ou $_POST['f_name'];
+$lastName = "Krajcik"; // ou $_POST['l_name'];
  
 $qry = "select * from customers where first_name = ? and last_name = ?";
  

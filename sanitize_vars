@@ -1,0 +1,3 @@
+$var="Peter's here!";
+$linesArqOk = filter_var($var, FILTER_SANITIZE_MAGIC_QUOTES);
+// "Peter\'s here!"

@@ -6,3 +6,60 @@ $linesArqOk = filter_var($var, FILTER_SANITIZE_MAGIC_QUOTES);
 $_GET   = filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);
 $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
+
+
+// To SANITIZE Integer value use
+$var=(filter_var($var, FILTER_SANITIZE_NUMBER_INT));
+//example:
+$theNumber="983928/2ddo@3233'0 or 1 '%^33)_23@''''$9123!@~#";
+$theNumber=(filter_var($theNumber, FILTER_SANITIZE_NUMBER_INT));
+echo $theNumber; 
+//cleaned out put will be: 983928232330133239123
+
+
+
+//To SANITIZE email query value use
+$var=(filter_var($var,  FILTER_SANITIZE_EMAIL));
+ 
+//example:
+$theEmail="warith@d\igi7/7.com";
+$theEmail=(filter_var($theEmail,  FILTER_SANITIZE_EMAIL));
+echo $theEmail;
+//cleaned out put will be: warith@digi77.com;
+
+
+
+//To SANITIZE String value use
+function StringInputCleaner($data)
+{
+	//remove space bfore and after
+	$data = trim($data); 
+	//remove slashes
+	$data = stripslashes($data); 
+	$data=(filter_var($data, FILTER_SANITIZE_STRING));
+	return $data;
+}	
+//example:
+$myString="Welcome <script> alert('\Hi digi77.com')</script> here"; ;
+$myString=StringInputCleaner($myString);
+echo $myString;
+//cleaned out put will be: Welcome alert('Hi digi77.com') here
+
+
+
+
+//To SANITIZE Sql query value use
+function mysqlCleaner($data)
+{
+	$data= mysql_real_escape_string($data);
+	$data= stripslashes($data);
+	return $data;
+	//or in one line code 
+	//return(stripslashes(mysql_real_escape_string($data)));
+}	
+//example:
+$insert="delete from vbtube_tubes WHERE tubeid =$row5[0]";
+$insert= mysqlCleaner($insert);
+mysql_query($insert);
+
+

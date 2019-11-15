@@ -1,3 +1,7 @@
+filter_var() is about filtering and validating input data.
+mysqli_real_escape_string() is about escaping data before using it in a MySQL string.
+
+
 // escape variables for security
 $firstname = mysqli_real_escape_string($con, $_POST['firstname']);
 $lastname = mysqli_real_escape_string($con, $_POST['lastname']);

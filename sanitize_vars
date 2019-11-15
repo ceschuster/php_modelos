@@ -1,6 +1,16 @@
+// escape variables for security
+$firstname = mysqli_real_escape_string($con, $_POST['firstname']);
+$lastname = mysqli_real_escape_string($con, $_POST['lastname']);
+$age = mysqli_real_escape_string($con, $_POST['age']);
+
+
+
+
 $var="Peter's here!";
 $linesArqOk = filter_var($var, FILTER_SANITIZE_MAGIC_QUOTES);
 // "Peter\'s here!"
+
+
 
 // prevent XSS
 $_GET   = filter_input_array(INPUT_GET, FILTER_SANITIZE_STRING);

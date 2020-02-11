@@ -1,0 +1,18 @@
+<?php
+
+$nome_a_procurar = "-1";
+if (isset($_POST["nome_a_procurar"])) $nome_a_procurar = mysqli_real_escape_string($con1, trim($_POST["nome_a_procurar"]));
+
+$sql = "Select nome, telefone from cliente where nome='$nome_a_procurar'";
+// ou $sql = "Select nome, telefone from cliente where nome like '%$nome_a_procurar%'";
+
+$Recordset1 = mysqli_query($con1,$sql) or die(mysqli_error($con1));
+$row1 = mysqli_fetch_assoc($Recordset1);
+$totalRows_Recordset1 = mysqli_num_rows($Recordset1);
+
+do { ?>
+
+  <input readonly ... value="<?php echo row1["nome"];?>">
+  <input readonly ... value="<?php echo row1["telefone"];?>">
+  
+<?php } while ($row1 = mysqli_fetch_assoc($Recordset1)); ?>

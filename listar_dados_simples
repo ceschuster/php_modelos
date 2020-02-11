@@ -1,6 +1,7 @@
 require_once("conexaoOk.php");
 mysqli_select_db($conexao1, $database_conexao1);
 
+
 $sql = "SELECT id, campo1 FROM blocos";
 $result = mysqli_query($conexao1, $sql) or trigger_error("Query Failed! SQL: Error: ".mysqli_error($conexao1), E_USER_ERROR);
 

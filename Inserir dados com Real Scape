@@ -1,0 +1,17 @@
+<?php
+
+include_once("conecta.php");
+
+// previnir sql injection
+$nome = mysqli_real_escape_string($conexao1, trim($_POST["nome"])); 
+$telefone = mysqli_real_escape_string($conexao1, trim($_POST["telefone"]));
+
+$sql="INSERT INTO cliente (nome, telefone) VALUES ('$nome','$telefone')";
+
+$Result1 = mysqli_query($conexao1, $sql) or die(mysqli_error($conexao1));
+
+header("Location: index.php?msg=ok");
+exit;
+
+
+?>
